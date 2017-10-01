@@ -1,0 +1,19 @@
+{
+  "name": "intro-node-js-exercise",
+  "version": "1.0.0",
+  "description": "exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "intro",
+    "node",
+    "js"
+  ],
+  "author": "KK",
+  "license": "MIT",
+  "dependencies": {
+    "standard": "^10.0.3"
+  }
+}
