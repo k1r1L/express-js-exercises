@@ -1,7 +1,7 @@
 const http = require('http')
 const url = require('url')
 const handlers = require('./handlers/handlers')
-const port = 3333
+const port = 1337
 
 http
   .createServer((req, res) => {
