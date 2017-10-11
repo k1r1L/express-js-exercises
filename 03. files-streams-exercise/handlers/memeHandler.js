@@ -4,6 +4,7 @@ const formidable = require('formidable')
 const url = require('url')
 const qs = require('querystring')
 const randomstring = require('randomstring')
+const downloader = require('image-downloader')
 const form = new formidable.IncomingForm()
 
 function viewAll (req, res) {
@@ -99,7 +100,7 @@ function getDetails (req, res) {
     <img src="${targetedMeme.memeSrc}" alt=""/>
     <h3>Title  ${targetedMeme.title}</h3>
     <p> ${targetedMeme.description}</p>
-    <button><a href="${targetedMeme.memeSrc}">Download Meme</a></button>
+    <button><a href="${targetedMeme.memeSrc}" download=" ${targetedMeme.title}.jpg">Download Meme</a></button>
     </div>`
 
     data = data
@@ -111,7 +112,6 @@ function getDetails (req, res) {
     res.end(data)
   })
 }
-
 module.exports = (req, res) => {
   if (req.pathname === '/viewAllMemes' && req.method === 'GET') {
     viewAll(req, res)
