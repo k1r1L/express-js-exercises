@@ -1,0 +1,17 @@
+{
+  "name": "node-utillities-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "files",
+    "streams",
+    "modules"
+  ],
+  "author": "KK",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "1.1.1",
+    "randomstring": "1.1.5"
+  }
+}
