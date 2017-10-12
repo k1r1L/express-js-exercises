@@ -4,7 +4,6 @@ const formidable = require('formidable')
 const url = require('url')
 const qs = require('querystring')
 const randomstring = require('randomstring')
-const downloader = require('image-downloader')
 const form = new formidable.IncomingForm()
 
 function viewAll (req, res) {
