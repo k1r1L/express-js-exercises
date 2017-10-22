@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Doner Place</title>
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <span class="logo">Doner Place</span>
+      {{#if user}}
+      <span class="greeting">Welcome, {{user.username}}! |
+        <form id="logout-form" action="/user/logout" method="post"></form>
+        <a href="javascript:document.getElementById('logout-form').submit()">[logout]</a>
+      </span>
+      {{/if}}
+      <ul class="menu">
+        <li>
+          <a class="button" href="/">Home</a>
+        </li>
+        {{#if isAdmin}}
+        <li>
+          <a class="button" href="/admin/product/create">Create Product</a>
+        </li>
+        <li>
+          <a class="button" href="/admin/orders/all">All Orders</a>
+        </li>
+        {{/if}} 
+        {{#if user}}
+        <li>
+          <a class="button" href="/order/myorders/{{user._id}}">My Orders</a>
+        </li>
+        {{else}}
+        <li>
+          <a class="button" href="/user/login">Login</a>
+        </li>
+        <li>
+          <a class="button" href="/user/register">Register</a>
+        </li>
+        {{/if}}
+      </ul>
+    </header>
+    <main>
+      {{#if error}}
+      <h2 class="message error">{{error}}</h2>
+      {{/if}} {{#if success}}
+      <h2 class="message success">{{success}}</h2>
+      {{/if}} {{{body}}}
+    </main>
+    <footer>Doner Place &copy; 2017</footer>
+  </div>
+</body>
+
+</html>
